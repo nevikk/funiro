@@ -1,0 +1,115 @@
+//<Основной блок>=============================================================
+._title{
+	@include adaptiv-value("font-size", 40, 24, 1);
+	font-weight: 700;
+	line-height: 120%;
+	text-align: center;
+}
+
+._flyImage{
+	position: fixed;
+	z-index: 100;
+	transition: all 1s ease 0s;
+	img {
+		width: 100%;
+		height: 100%;
+	}
+}
+
+._footer-title {
+	@include adaptiv-value("font-size", 24, 20, 1);
+	line-height: calc(29/24*100%);
+	color: #000;
+	font-weight: 700;
+}
+
+.slider-arrows {
+	display: grid;
+	grid-template-columns: repeat(2, 48px);
+	column-gap: 8px;
+}
+
+.slider-arrow {
+	pointer-events: auto;
+	border-radius: 50%;
+	height: 48px;
+	background-color: rgba(232, 159, 113, 0.3);
+	color: $orangeColor;
+	font-size: 12px;
+	cursor: pointer;
+	transition: all 0.4s ease 0s;
+	//.slider-arrow_prev
+	&_prev {
+		transform: rotate(90deg);
+	}
+
+	//.slider-arrow_next
+	&_next {
+		transform: rotate(-90deg);
+	}
+	@media (any-hover: hover) {
+		&:hover {
+			color: #fff;
+			background-color: rgba(232, 159, 113, 1);
+		}
+	}
+	&_white{
+		box-shadow: 0px 4px 14px 1px rgba(0,0,0, 0.16);
+		background-color: #fff;
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: $orangeColor;
+				color: #fff;
+			}
+		}
+	}
+}
+
+.swiper-pagination-bullets {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.swiper-pagination-bullet {
+	background: none;
+	cursor: pointer;
+	flex: 0 0 27px;
+	height: 27px;
+	display: flex;
+	position: relative;
+	align-items: center;
+	justify-content: center;
+	margin: 2px 0px;
+	&:not(:last-child) {
+		margin-right: 12px;
+	}
+	&::after {
+		content: '';
+		width: 11px;
+		height: 11px;
+		background-color: #000;
+		border-radius: 50%;
+		transition: background-color 0.4s ease 0s;
+	}
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		border-radius: 50%;
+		border: 1px solid $orangeColor;
+		transition: transform 0.4s ease 0s;
+		transform: scale(0);
+	}
+}
+.swiper-pagination-bullet-active {
+	&::after {
+		background-color: $orangeColor;
+	}
+	&::before {
+		transform: scale(1);
+	}
+}
+//</Основной блок>============================================================
