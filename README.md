@@ -1,5 +1,5 @@
 # funiro
-One of the examples of my coding
+one of my code examples
 
 Ссылка на демо: https://anatoliinovikov.ru/projects/funiro/index.html
 
